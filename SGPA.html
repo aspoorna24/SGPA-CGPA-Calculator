@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SGPA of 1st sem</title>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+	input{
+		padding: 2px;
+	}
+</style>
+     <script>
+ $(document).ready(function(){
+ 
+  $("#sgpa").hide();
+  $("#bu").click(function(){
+   $("#sgpa").show();
+  });
+
+ 	$("#al").click(function(){
+         alert("You cant give input here it's output section");
+ 	});
+  $("marquee").click(function(){
+  $(this).hide();
+  });
+ });
+     	function myFunction(){
+      var I1= parseFloat(document.getElementById("I1").value);
+       var I2= parseFloat(document.getElementById("I2").value); 
+       var I3= parseFloat(document.getElementById("I3").value); 
+       var I4= parseFloat(document.getElementById("I4").value);
+        var I5= parseFloat(document.getElementById("I5").value); 
+        var I6= parseFloat(document.getElementById("I6").value); 
+        var I7= parseFloat(document.getElementById("I7").value);
+        var I8= parseFloat(document.getElementById("I8").value);
+        var I9= parseFloat(document.getElementById("I9").value);
+     
+     console.log(I1,I2,I3,I4,I5,I6,I7);
+     
+       var E1= parseFloat(document.getElementById("E1").value);
+ 	   var E2= parseFloat(document.getElementById("E2").value);   
+ 	   var E3= parseFloat(document.getElementById("E3").value);
+      var E4= parseFloat(document.getElementById("E4").value);
+      var E5= parseFloat(document.getElementById("E5").value);
+      var E6= parseFloat(document.getElementById("E6").value);  
+     var E7= parseFloat(document.getElementById("E7").value);
+      var E8= parseFloat(document.getElementById("E8").value);
+       var E9= parseFloat(document.getElementById("E9").value);
+ 	 console.log(E1,E2,E3,E4,E5,E6,E7); 
+ 	  var c1= parseFloat(document.getElementById("c1").value);
+     var c2= parseFloat(document.getElementById("c2").value);  
+     var c3= parseFloat(document.getElementById("c3").value);
+     var c4= parseFloat(document.getElementById("c4").value);
+     var c5= parseFloat(document.getElementById("c5").value);
+      var c6= parseFloat(document.getElementById("c6").value);
+      var c7= parseFloat(document.getElementById("c7").value);
+       var c8= parseFloat(document.getElementById("c8").value);
+        var c9= parseFloat(document.getElementById("c9").value);
+      console.log(c1,c2,c3,c4,c5,c6,c7);
+      var p1,p2,p3,p4,p5,p6,p7,p8,p9;
+      
+       p1=CalculateCredit(E1,I1);
+       p2=CalculateCredit(E2,I2);
+        p3=CalculateCredit(E3,I3);
+         p4=CalculateCredit(E4,I4);
+          p5=CalculateCredit(E5,I5);
+           p6=CalculateCredit(E6,I6);
+            p7=CalculateCredit(E7,I7);
+             p8=CalculateCredit(E8,I8);
+              p9=CalculateCredit(E9,I9);
+   var sgpa=parseFloat(((p1*c1)+(p2*c2)+(p3*c3)+(p4*c4)+(p5*c5)+(p6*c6)+(p7*c7)+(p8*c8)+(p9*c9))/(c1+c2+c3+c4+c5+c6+c7+c8+c9));
+  document.getElementById("sgpa").innerHTML="SGPA"+"<br>"+sgpa;
+ document.getElementById("sgpa").style.color="black";
+ 	document.getElementById("p1").value=p1;
+ 	document.getElementById("p2").value=p2;
+ 	document.getElementById("p3").value=p3;
+ 	document.getElementById("p4").value=p4;
+ 	document.getElementById("p5").value=p5;
+ 	document.getElementById("p6").value=p6;
+ 	document.getElementById("p7").value=p7;
+ 	document.getElementById("p8").value=p8;
+ 	document.getElementById("p9").value=p9;
+   
+   document.getElementById("g1").value=CalculateGrade(p1); 
+   document.getElementById("g2").value=CalculateGrade(p2);
+   document.getElementById("g3").value=CalculateGrade(p3);
+   document.getElementById("g4").value=CalculateGrade(p4);
+   document.getElementById("g5").value=CalculateGrade(p5);
+   document.getElementById("g6").value=CalculateGrade(p6);
+   document.getElementById("g7").value=CalculateGrade(p7);
+   document.getElementById("g8").value=CalculateGrade(p8);
+   document.getElementById("g9").value=CalculateGrade(p9);    
+}
+
+  function CalculateCredit(i,e){
+  	if((i-e)>=20)
+  	{
+       if(i>=90)  { return 10;}
+       else if (i>=80) { return 9;} 
+       else if (i>=70) {return 8;}
+       else if (i>=60) {return 7;}
+       else if(i>=45)  {return 6;}
+       else {return 4;}
+  		}
+     else return 0;
+ }
+ function CalculateGrade(p){
+  if(p==10) { return "S+";}
+  else if(p==9){ return"S";}
+  else if (p==8) {return"A";}
+ else if(p==7) {return "B";}
+ else if (p==6){return"C";}
+ else if (p==4) {return"E";}
+ else {return"F";}
+ }
+ function sga(){
+
+	   var I1= parseFloat(document.getElementById("I1").value);
+       var I2= parseFloat(document.getElementById("I2").value); 
+       var I3= parseFloat(document.getElementById("I3").value); 
+       var I4= parseFloat(document.getElementById("I4").value);
+        var I5= parseFloat(document.getElementById("I5").value); 
+        var I6= parseFloat(document.getElementById("I6").value); 
+        var I7= parseFloat(document.getElementById("I7").value);
+        var I8= parseFloat(document.getElementById("I8").value);
+        var I9= parseFloat(document.getElementById("I9").value);
+     
+     console.log(I1,I2,I3,I4,I5,I6,I7);
+     
+       var E1= parseFloat(document.getElementById("E1").value);
+ 	   var E2= parseFloat(document.getElementById("E2").value);   
+ 	   var E3= parseFloat(document.getElementById("E3").value);
+      var E4= parseFloat(document.getElementById("E4").value);
+      var E5= parseFloat(document.getElementById("E5").value);
+      var E6= parseFloat(document.getElementById("E6").value);  
+     var E7= parseFloat(document.getElementById("E7").value);
+      var E8= parseFloat(document.getElementById("E8").value);
+       var E9= parseFloat(document.getElementById("E9").value);
+ 	 console.log(E1,E2,E3,E4,E5,E6,E7); 
+ 	  var c1= parseFloat(document.getElementById("c1").value);
+     var c2= parseFloat(document.getElementById("c2").value);  
+     var c3= parseFloat(document.getElementById("c3").value);
+     var c4= parseFloat(document.getElementById("c4").value);
+     var c5= parseFloat(document.getElementById("c5").value);
+      var c6= parseFloat(document.getElementById("c6").value);
+      var c7= parseFloat(document.getElementById("c7").value);
+       var c8= parseFloat(document.getElementById("c8").value);
+        var c9= parseFloat(document.getElementById("c9").value);
+      console.log(c1,c2,c3,c4,c5,c6,c7);
+      var p1,p2,p3,p4,p5,p6,p7,p8,p9;
+      
+       p1=CalculateCredit(E1,I1);
+       p2=CalculateCredit(E2,I2);
+        p3=CalculateCredit(E3,I3);
+         p4=CalculateCredit(E4,I4);
+          p5=CalculateCredit(E5,I5);
+           p6=CalculateCredit(E6,I6);
+            p7=CalculateCredit(E7,I7);
+             p8=CalculateCredit(E8,I8);
+              p9=CalculateCredit(E9,I9);
+   var sgpa=parseFloat(((p1*c1)+(p2*c2)+(p3*c3)+(p4*c4)+(p5*c5)+(p6*c6)+(p7*c7)+(p8*c8)+(p9*c9))/(c1+c2+c3+c4+c5+c6+c7+c8+c9));
+   return sgpa;
+ }
+function myCreateFunction() {
+  var row = document.getElementById("myTable").insertRow(1);
+  var name=row.insertCell(0);
+  var usn=row.insertCell(1);
+  var cell1 = row.insertCell(2);
+  var cell2 = row.insertCell(3);
+   var cell3 = row.insertCell(4);
+    var cell4 = row.insertCell(5);
+     var cell5 = row.insertCell(6);
+      var cell6 = row.insertCell(7);
+       var cell7 = row.insertCell(8);
+        var cell8 = row.insertCell(9);
+         var cell9 = row.insertCell(10);
+         var sgpa=row.insertCell(11);
+         name.innerHTML=document.getElementById("name").value;
+         usn.innerHTML=document.getElementById("usn").value;
+         cell1.innerHTML = document.getElementById("p1").value; 
+           cell2.innerHTML = document.getElementById("p2").value;
+  cell3.innerHTML = document.getElementById("p3").value; 
+  cell4.innerHTML = document.getElementById("p4").value;
+   cell5.innerHTML = document.getElementById("p5").value;
+    cell6.innerHTML =document.getElementById("p6").value;
+     cell7.innerHTML = document.getElementById("p7").value; 
+      cell8.innerHTML = document.getElementById("p8").value;
+       cell9.innerHTML = document.getElementById("p9").value;
+       sgpa.innerHTML= sga();
+
+    
+}
+
+
+function myDeleteFunction() {
+  document.getElementById("myTable").deleteRow(1);
+}
+
+
+</script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="jumbotron bg-dark text-center text-white">
+		  	<h1><i>CALCULATION OF SGPA</i></h1>
+		</div>
+	</div>
+	<marquee style="color: red;">If you have not written the external exam for optional course then enter your IA marks as a total marks and if any inputs became extra fill it with 0 </marquee>
+	<br>
+	<br>
+	<div class="container">
+		Enter your name: <input type="text" placeholder="NAME" class="form-control form-control-sm" id="name">     
+          <br><br>
+		 Enter your usn: <input type="text" placeholder="USN" class="form-control form-control-sm" id="usn">
+	</div>
+
+<br>
+<br>
+	<div class="container"> 
+    <form>
+    <div class="row">
+    	<div class="col-md-2 col-10 mb-3 ml-1" style="background-color: rgba(20, 99, 255,0.5)">
+    		<br>
+    		<h4>Internal marks</h4>
+    		<input type="number" class="form-control  form-control-sm" id="I1" placeholder="subject1" required max="40" min="18">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="I2" placeholder="subject2" required  max="40" min="18">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="I3" placeholder="subject3" required max="40" min="18">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="I4" placeholder="subject4" required  max="40" min="18">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="I5" placeholder="subject5" required max="40" min="18">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="I6" placeholder="subject6" required  max="40" min="18">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="I7" placeholder="subject7" required max="40" min="18">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="I8" placeholder="subject8" required max="40" min="18">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="I9" placeholder="subject9" required max="40" min="18">
+    		<br>
+    
+    	</div>
+    	<div class="col-md-2 col-10 mb-3 ml-1" style="background-color: rgba(20, 99, 255,0.5)">
+    		<br>
+    		<h4>Total marks</h4>
+    		<input type="number" class="form-control  form-control-sm" id="E1" placeholder="subject1"  max="100" min="0">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="E2" placeholder="subject2"  max="100" min="0">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm"  id="E3" placeholder="subject3"  max="100" min="0">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm"  id="E4" placeholder="subject4"  max="100" min="0">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="E5" placeholder="subject5"  max="100" min="0">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="E6" placeholder="subject6"  max="100" min="0">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="E7" placeholder="subject7"  max="100" min="0">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="E8" placeholder="subject8"  max="100" min="0">
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="E9" placeholder="subject9"  max="100" min="0">
+    		<br>
+    	</div>
+    	<div class="col-md-2 col-10 mb-3 ml-1" style="background-color: rgba(20, 99, 255,0.5)">
+    		<br>
+    		<h4>Credits</h4>
+    		<input type="number" class="form-control  form-control-sm" id="c1" placeholder="subject1"  >
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="c2" placeholder="subject2" >
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="c3" placeholder="subject3" >
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="c4" placeholder="subject4" >
+    		<br>
+    		<input type="number" class="form-control  form-control-sm"  id="c5" placeholder="subject5" >
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="c6" placeholder="subject6"  >
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="c7" placeholder="subject7"  >
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="c8" placeholder="subject8"  >
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="c9" placeholder="subject9"  >
+    		<br>
+    	</div>
+    	<div class="col-md-1 " >
+    		
+    	</div>
+  <div class="col-md-2 col-10 mb-3 ml-1" id="al" style="background-color: rgba(255,0,0,0.4)">
+    		<br>
+    		<h4>Gread Point</h4>
+    		<input type="number" class="form-control  form-control-sm" id="p1" placeholder="Gread Point" readonly>
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="p2" placeholder="Gread Point" readonly>
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="p3" placeholder="Gread Point" readonly>
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="p4" placeholder="Gread Point" readonly>
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="p5" placeholder="Gread Point" readonly>
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="p6" placeholder="Gread Point" readonly>
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="p7" placeholder="Gread Point" readonly>
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="p8" placeholder="Gread Point" readonly>
+    		<br>
+    		<input type="number" class="form-control  form-control-sm" id="p9" placeholder="Gread Point" readonly>
+    		<br>
+    	</div><div class="col-md-2 col-10 mb-3 ml-1" id="al" style="background-color: rgba(255,0,0,0.4)">
+    		<br>
+    		<h4>Grade</h4>
+    		<input type="text" class="form-control  form-control-sm"  id="g1"  placeholder="Gread" readonly>
+    		<br>
+    		<input type="text" class="form-control  form-control-sm" id="g2"  placeholder="Gread" readonly>
+    		<br>
+    		<input type="text" class="form-control  form-control-sm" id="g3"  placeholder="Gread" readonly>
+    		<br>
+    		<input type="text" class="form-control  form-control-sm" id="g4"  placeholder="Gread" readonly>
+    		<br>
+    		<input type="text" class="form-control  form-control-sm" id="g5"  placeholder="Gread" readonly>
+    		<br>
+    		<input type="text" class="form-control  form-control-sm" id="g6"  placeholder="Gread" readonly>
+    		<br>
+    		<input type="text" class="form-control  form-control-sm" id="g7"  placeholder="Gread" readonly>
+    		<br>
+           <input type="text" class="form-control  form-control-sm" id="g8"  placeholder="Gread" readonly>
+    		<br>
+    		<input type="text" class="form-control  form-control-sm" id="g9"  placeholder="Gread" readonly>
+    		<br>
+    	</div>
+    </div>
+    <div class="container-fluid">
+    <input type="reset">
+    <input type="submit">
+    <input type="button" id="bu"  value="Calculate SGPA" onclick="myFunction()">    
+     <input type="button" value="Add to table" id="Add" onclick="myCreateFunction()">
+     <input type="button" value="Remove" id="Remove" onclick="myDeleteFunction()">
+       <h2> <span id="sgpa" style="float: right; background-color:rgba(0,255,0,0.1);padding: 20px; border:15px green solid;margin-bottom: 20px;"> </span></h2>
+    </div>
+ </form>
+
+</div>
+<div>
+	<br>
+	<br>
+	<div class="container">
+ <table   class="table table-striped table-responsive" id="myTable">
+ 	<thead class="thead-dark">
+ 		<tr>
+ 			 <th> NAME </th>
+ 			 <th> USN </th>
+ 			 <th> Subject 1</th>
+             <th> Subject 2</th>
+             <th> Subject 3</th>
+             <th> Subject 4</th>
+             <th> Subject 5</th>
+             <th> Subject 6</th>
+             <th> Subject 7</th>
+             <th> Subject 8</th>
+             <th> Subject 9</th>
+             <th> SGPA </th>
+		</tr>
+ 	</thead>
+ </table>
+ <br>
+ <br>
+ </div>
+</div>
+ </body>
+</html>

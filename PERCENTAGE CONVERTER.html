@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sgpaconverter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body {
+           
+           background-repeat: no-repeat;
+           background-size: 100% 100%;
+           background-attachment: fixed;
+           text-align: center;
+           
+    }
+</style>
+<script>
+    function myFun(){
+        if (document.getElementById('sgpa').value==""){
+            document.getElementById('demo').innerHTML="Enter the valid input";
+            return;
+        }
+        var i = parseFloat(document.getElementById('sgpa').value);
+        if (i>10){
+           window.alert("The sgpa must be between 0 to 10");
+           document.getElementById('sgpa').innerHTML="";
+           return;
+        }
+        var p;
+        p= (i*10)-7.5;
+        document.getElementById('demo').innerHTML=p+" % ";
+    }
+</script>
+<body>
+    <div class="container-fluid">
+		<div class="jumbotron bg-dark text-center text-white">
+		  	<h1><i>SGPA CONVERTER</i></h1>
+		</div>
+	</div>
+<div class="d-flex justify-content-center" >
+<div style="background-color:rgba(255,255,255,0.5); margin-top: 10%;padding-bottom: 10px;width:500px;">
+    <br>
+
+<h3> Enter your sgpa  </h3>
+<input type="number" id="sgpa">
+<p style="color: red;"> Enter your proper sgpa(within 10 to 0) </p>
+<input type="submit" onclick="myFun()">
+<h3> Your percentage is </h3>
+<h5 id="demo"></h5>
+</div>
+</div>
+
+
+</body>
+</html>
